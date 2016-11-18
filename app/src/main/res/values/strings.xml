@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PermissionHelper</string>
+    <string name="snackbar_msg">You don\'t have permission</string>
+    <string name="snackbar_button">Go to Setting</string>
+    <string name="dialog_title">Reminder</string>
+    <string name="dialog_msg">We need you permission.\nPress Yes button if you granted</string>
+    <string name="dialog_confirm">Yes</string>
+    <string name="dialog_cancel">No. I deny</string>
+    <string name="toast_granted_msg_1">Permission granted! (1)</string>
+    <string name="toast_granted_msg_2">Permission granted! (2)</string>
+
+
+</resources>
