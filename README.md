@@ -23,6 +23,7 @@ dependencies {
 How To
 ===
 > step 1: create Permission Helper and add required permission
+
 ``` java
 PermissionHelper mPermissionHelper 
         = new PermissionHelper(activity);
@@ -35,6 +36,7 @@ mPermissionHelper.addPermission(CAMERA);
 ```
 
 > step 2: setup Listener
+
 ``` java
 mPermissionHelper.setListener(new PermissionHelper.PermissionListener() {
             @Override
@@ -61,6 +63,7 @@ mPermissionHelper.setListener(new PermissionHelper.PermissionListener() {
 ```
 
 > step 3: setup permission result receiver from Activity or Fragment
+
 ``` java
 @Override
 public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -71,6 +74,7 @@ public void onRequestPermissionsResult(int requestCode, @NonNull String[] permis
 
 
 > step 4: call check method in wherever you want
+
 ``` java
 
 checkAndRequestRequiredPermission(Your_Request_Code);
