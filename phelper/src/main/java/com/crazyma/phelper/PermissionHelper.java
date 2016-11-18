@@ -19,8 +19,6 @@ import java.util.List;
  */
 
 public class PermissionHelper {
-    //  if your just want to check permission and don't request, use the requestCode
-    final static public int REQUEST_NOT_REQUIRING_PERMISSION = 0;
 
     private Fragment fragment;
     private AppCompatActivity activity;
@@ -76,15 +74,27 @@ public class PermissionHelper {
         }
     }
 
-    public boolean checkRequiredPermission(int requestCode){
+    public boolean checkAndRequestRequiredPermission(int requestCode){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if(context != null){
                 for (String permission : permissionList) {
                     if(ContextCompat.checkSelfPermission(context,permission)
                             == PackageManager.PERMISSION_DENIED){
-                        //  request permissions or not
-                        if(REQUEST_NOT_REQUIRING_PERMISSION != requestCode)
-                            requestPermissions(requestCode);
+                        requestPermissions(requestCode);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean checkRequiredPermission(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if(context != null){
+                for (String permission : permissionList) {
+                    if(ContextCompat.checkSelfPermission(context,permission)
+                            == PackageManager.PERMISSION_DENIED){
                         return false;
                     }
                 }

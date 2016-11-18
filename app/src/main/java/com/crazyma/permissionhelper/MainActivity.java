@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClicked(View v){
-        if(mPermissionHelper.checkRequiredPermission(REQUEST_ACCESS_FINE_LOCATION_API))
+        if(mPermissionHelper.checkAndRequestRequiredPermission(REQUEST_ACCESS_FINE_LOCATION_API))
             Toast.makeText(this,R.string.toast_granted_msg_2,Toast.LENGTH_LONG).show();
     }
 }
