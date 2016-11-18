@@ -20,7 +20,7 @@ dependencies {
 }
 ```
 
-Step
+How To
 ===
 > step 1: create Permission Helper and add required permission
 ``` java
